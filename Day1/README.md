@@ -201,3 +201,20 @@ docker images | grep mysql
 ```
 
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/e384e987-5d8b-4e83-b2e4-16e4d739cad7" />
+
+
+## Lab - Deleting a docker image from local docker registry
+```
+# Download hello-world:latest image
+docker pull hello-world:latest
+
+# List hello world image
+docker images | grep hello-world
+
+# Delete hello world image
+docker rmi hello-world:latest
+
+# List hello world image
+docker images | grep hello-world
+```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/e0466cb8-e912-4da6-9db3-3cc26ba29659" />
