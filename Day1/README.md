@@ -185,3 +185,10 @@ docker images
 ```
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/fac60bb4-a5ae-4a7d-b2f2-c858f25e4fba" />
 
+## Lab - Download docker image from Docker Hub to your local docker registry
+```
+docker pull nginx:latest
+docker pull mysql:latest
+```
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/647cd5a4-8f99-4b87-b1f9-894725e5ef44" />
