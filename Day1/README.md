@@ -244,5 +244,28 @@ exit
 
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/ab390e7a-de13-483b-a89d-bff83c94820c" />
 
+## Lab - Stopping and Starting your container
+List and see your container
+```
+docker ps | grep jegan
+```
 
+Stop your container
+```
+docker stop ubuntu1-jegan
+```
 
+List and see your container
+```
+docker ps -a| grep jegan
+```
+
+Start your container
+```
+docker start ubuntu1-jegan
+```
+
+List and see your container
+```
+docker ps | grep jegan
+```
