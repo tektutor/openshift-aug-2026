@@ -1,4 +1,4 @@
-# openshift-aug-2026
+# Red Hat Openshift 03-07 August 2026
 
 ## Pre-test url ( Kindly complete the test from Cloud lab machine )
 <pre>
