@@ -1,6 +1,6 @@
 # openshift-aug-2026
 
-## Pre-test url
+## Pre-test url ( Kindly complete the test from Cloud lab machine )
 <pre>
 https://forms.cloud.microsoft/r/m0qT3EHbxD  
 </pre>
