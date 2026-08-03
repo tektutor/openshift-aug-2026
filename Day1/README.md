@@ -218,3 +218,25 @@ docker rmi hello-world:latest
 docker images | grep hello-world
 ```
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/e0466cb8-e912-4da6-9db3-3cc26ba29659" />
+
+## Lab - Creating and running the container in the background(daemon/deattached) mode
+```
+# Try to navigate to /var/lib/docker folder
+whoami
+cd /var/lib/docker  # You are supposed to get permission denied error as you are not an administrator
+
+docker run -dit --name ubuntu1-jegan --hostname ubuntu1-jegan ubuntu:latest /bin/bash
+
+# List all running containers
+docker ps
+
+# Get inside the container shell
+docker exec -it ubuntu1-jegan /bin/bash
+hostname
+hostname -i
+ls
+whoami
+exit
+```
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/4b66d763-93d2-48da-861d-af338e1f6be2" />
