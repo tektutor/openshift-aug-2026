@@ -57,5 +57,5 @@
 - in real world, containers runs inside VMs, VMs runs inside Physical Servers
 </pre>
 
-## Info - High Level Docker Architecute
+## Info - High Level Docker Architecture
 ![docker](DockerHighLevelArchitecture.png)
