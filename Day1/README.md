@@ -28,3 +28,10 @@
   2. Type 2 - a.k.a Hosted Hypervisor
      - used in Laptops/Desktops/Workstation where already there is Host OS pre-installed(Windows, Mac OS-X or Linux )
 </pre>
+
+## Info - High Level Hypervisor Architecture
+![hypervisor](HypervisorHighLevelArchitecture.png)
+
+
+## Info - High Level Docker Architecute
+![docker](DockerHighLevelArchitecture.png)
