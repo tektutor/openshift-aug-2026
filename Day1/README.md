@@ -25,13 +25,17 @@
 - there are 2 types of Hypervisor
   1. Type 1 - a.k.a Bare Metal Hypervisor
      - used in Servers & Workstations
+     - examples
+       - VMWare vSphere(v-center), Linux KVM, Microsoft Hyper-v, zen, etc.,
   2. Type 2 - a.k.a Hosted Hypervisor
      - used in Laptops/Desktops/Workstation where already there is Host OS pre-installed(Windows, Mac OS-X or Linux )
+     - examples
+       - VMWare Workstation, VMware Fusion, Oracle VirtualBox, Parallel, etc.,
+- each VM
 </pre>
 
 ## Info - High Level Hypervisor Architecture
 ![hypervisor](HypervisorHighLevelArchitecture.png)
-
 
 ## Info - High Level Docker Architecute
 ![docker](DockerHighLevelArchitecture.png)
