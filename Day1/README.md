@@ -372,6 +372,7 @@ exit
 ```
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/a9a90823-0699-43c1-8083-bf9134f3c1bf" />
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/2ca4f391-e012-40dd-b37c-0335c90d92eb" />
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/af2d22ac-9f4a-4f36-8938-5bd97c0baa8b" />
 
 Let's delete the mysql container ( note, deleting container will not delete tektutor database or the training tables or any of its records )
 ```
