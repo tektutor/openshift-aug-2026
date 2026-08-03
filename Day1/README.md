@@ -238,5 +238,5 @@ ls
 whoami
 exit
 ```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/8d3c9b9c-d9a0-455c-b9b9-a1374cb855ab" />
 
-<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/4b66d763-93d2-48da-861d-af338e1f6be2" />
