@@ -395,3 +395,32 @@ SELECT * FROM trainings;  # You are supposed to see all the 3 records that were 
 exit
 exit
 ```
+
+## Lab - Finding IP address of a container
+```
+docker inspect ubuntu1-jegan | grep IPA
+docker inspect -f "{{.NetworkSettings.Networks.bridge.IPAddress}}" ubuntu1-jegan
+```
+
+## Lab - Checking logs
+```
+docker run -d --name nginx-jegan --hostname nginx-jegan nginx:latest
+docker logs nginx-jegan
+```
+
+## Lab - Copying files from local machine to container and vice versa
+```
+docker inspect nginx-jegan | grep IPA
+curl http://172.17.0.2:80
+
+# Copy the index.html from container to local machine
+docker cp nginx-jegan:/usr/share/nginx/html/index.html .
+
+# Update the index.html on your local machine
+echo "Nginx works!" > index.html
+
+# Copy the index.html from local machine to the container
+docker cp index.html nginx-jegan:/usr/share/nginx/html/index.html
+
+curl http://172.17.0.2:80
+```
