@@ -173,3 +173,14 @@ docker info
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/6c2ba3fe-72aa-479a-9f6f-31ad0d77b13b" />
 
 
+## Lab - Listing docker images from your local docker registry
+```
+id
+docker images
+# Troubleshooting Permission denied error
+newgrp docker
+id
+
+docker images
+```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/db49f346-5d58-4bf9-9f94-5d0d84efbc02" />
