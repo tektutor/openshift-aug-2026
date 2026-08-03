@@ -279,3 +279,22 @@ docker ps | grep ubuntu1-jegan
 ```
 
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/f8d8c24b-9548-4f5c-b05b-ecbab7982700" />
+
+## Lab - Delete a container gracefully
+
+In order to delete a container gracefully, you must stop it first
+```
+docker stop ubuntu1-jegan
+```
+
+Then delete it
+```
+docker rm ubuntu1-jegan
+docker ps -a
+```
+
+## Lab - Delete a container forcibly
+```
+docker rm -f ubuntu1-jegan
+docker ps -a
+```
