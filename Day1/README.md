@@ -314,6 +314,7 @@ Create a mysql db server container, when it prompts for password type root@123
 ```
 docker run -d --name mysql-jegan --hostname mysql-jegan -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
 docker ps
+docker logs mysql-jegan
 docker exec -it mysql-jegan /bin/sh
 mysql -u root -p
 
@@ -332,5 +333,64 @@ SELECT * FROM trainings;
 exit
 
 # come out of mysql-jegan container shell
+exit
+```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/21b78ba5-4c86-411c-b412-981647050dc2" />
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/6f8690b9-525a-456d-ae4d-5c5d08bbb0d5" />
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/dc9d3b7a-f574-43de-9a1a-2f718231cf00" />
+
+Let's delete the mysql container ( note, deleting container also deletes the tektutor database along with training tables and all its records )
+```
+docker rm -f mysql-jegan
+```
+
+Let's create mysql and let it store the data in an external storage ( this is the recommended practice )
+```
+mkdir -p /tmp/mysql-jegan
+docker run -d --name mysql-jegan --hostname mysql-jegan -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql-jegan:/var/lib/mysql mysql:latest
+docker ps
+
+docker exec -it mysql-jegan /bin/sh
+mysql -u root -p
+
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+USE tektutor;
+CREATE TABLE trainings ( id INT NOT NULL, name VARCHAR(250) NOT NULL, duration VARCHAR(250) NOT NULL, PRIMARY KEY(id) );
+
+INSERT INTO trainings VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO trainings VALUES ( 2, "Linux Device Driver", "5 Days" );
+INSERT INTO trainings VALUES ( 3, "Microservices in Golan", "5 Days" );
+
+SELECT * FROM trainings;
+
+# Come out of mysql client 
+exit
+
+# come out of mysql-jegan container shell
+exit
+```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/a9a90823-0699-43c1-8083-bf9134f3c1bf" />
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/2ca4f391-e012-40dd-b37c-0335c90d92eb" />
+
+Let's delete the mysql container ( note, deleting container will not delete tektutor database or the training tables or any of its records )
+```
+docker rm -f mysql-jegan
+```
+
+Let's create a different mysql container using the same host path mounted inside mysql container
+```
+docker run -d --name mysql-jegan --hostname mysql-jegan -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql-jegan:/var/lib/mysql mysql:latest
+docker ps
+
+docker exec -it mysql-jegan /bin/sh
+mysql -u root -p
+
+SHOW DATABASES; # You are supposed to see tektutor database
+USE tektutor;
+SHOW TABLES; # You are supposed to see trainings table
+
+SELECT * FROM trainings;  # You are supposed to see all the 3 records that were inserted from the previous container
+exit
 exit
 ```
