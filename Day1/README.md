@@ -132,7 +132,7 @@
   2. Docker Enterprise Edition- Docker EE ( licensed product )
 </pre>
 
-## Info - Installing Docker
+## Info - Installing Docker in Ubuntu
 ```
 # Add Docker's official GPG key:
 sudo apt update
