@@ -80,3 +80,22 @@
 - example
   - runC, cRun, CRI-O, rkt, etc.,
 </pre>
+
+## Info - Container Image
+<pre>
+- is a blueprint/template of a container
+- using Container Image, we can create as many containers as we need
+- packages a single application with all its dependent libraries, runtimes, etc.,
+- it has unique name and ID
+- the ID is a 256-bit Hash
+</pre>
+
+
+## Info - Container
+<pre>
+- is a running instance of a Container Image
+- it has an unique name and ID
+- the ID is a 256-bit Hash
+- one container represents one application
+- in some cases, multiple containers would be required to run a single application
+</pre>
