@@ -270,3 +270,12 @@ List and see your container
 docker ps | grep jegan
 ```
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/d5d4ec0c-d278-4098-a9f4-039ed7af2599" />
+
+## Lab - Restarting your container
+```
+docker ps | grep ubuntu1-jegan
+docker restart ubuntu1-jegan
+docker ps | grep ubuntu1-jegan
+```
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/f8d8c24b-9548-4f5c-b05b-ecbab7982700" />
