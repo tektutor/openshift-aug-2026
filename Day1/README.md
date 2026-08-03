@@ -298,3 +298,13 @@ docker ps -a
 docker rm -f ubuntu1-jegan
 docker ps -a
 ```
+
+## Lab - Finding more details about a docker image
+```
+docker images | grep mysql
+docker image inspect mysql:latest
+```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/792b510e-ceba-41d7-8ab0-65ee7aed3bff" />
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/00e3c1b7-a66a-4d3e-ae89-5acb098fc2ad" />
+
+
