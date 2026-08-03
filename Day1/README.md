@@ -55,6 +55,13 @@
 - one container represents one application
 - containers will never able to replace OS or Virtualization
 - in real world, containers runs inside VMs, VMs runs inside Physical Servers
+- Containerization depends on 2 Linux Kernel features
+  1. Namespace and
+     - is used to isolate one container from the other
+  2. Control Groups ( CGroups )
+     - is used to apply resource quota restricts like
+     - how many CPUs a container can use at the max
+     - how much RAM/disk a container can use at the max
 </pre>
 
 ## Info - High Level Docker Architecture
@@ -79,6 +86,7 @@
 - they are not so user-friendly, hence end-user almost never use container runtimes
 - example
   - runC, cRun, CRI-O, rkt, etc.,
+- depends on the Linux Kernel Namespace & CGroups
 </pre>
 
 ## Info - Container Image
@@ -98,4 +106,5 @@
 - the ID is a 256-bit Hash
 - one container represents one application
 - in some cases, multiple containers would be required to run a single application
+- every container runs in a separate namespace
 </pre>
