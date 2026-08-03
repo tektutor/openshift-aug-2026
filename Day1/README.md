@@ -225,17 +225,20 @@ docker images | grep hello-world
 whoami
 cd /var/lib/docker  # You are supposed to get permission denied error as you are not an administrator
 
+# The command creates a new container named ubuntu1-jegan and starts it
 docker run -dit --name ubuntu1-jegan --hostname ubuntu1-jegan ubuntu:latest /bin/bash
 
 # List all running containers
 docker ps
 
-# Get inside the container shell
+# Get inside the container shell of ubuntu1-jegan
 docker exec -it ubuntu1-jegan /bin/bash
 hostname
 hostname -i
 ls
 whoami
+
+# We are coming out of the container shell
 exit
 ```
 
