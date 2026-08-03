@@ -183,4 +183,5 @@ id
 
 docker images
 ```
-<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/db49f346-5d58-4bf9-9f94-5d0d84efbc02" />
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/fac60bb4-a5ae-4a7d-b2f2-c858f25e4fba" />
+
