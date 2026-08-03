@@ -308,3 +308,29 @@ docker image inspect mysql:latest
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/00e3c1b7-a66a-4d3e-ae89-5acb098fc2ad" />
 
 
+## Lab - Create a mysql db server container
+
+Create a mysql db server container, when it prompts for password type root@123 
+```
+docker run -d --name mysql-jegan --hostname mysql-jegan -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+docker ps
+docker exec -it mysql-jegan /bin/sh
+mysql -u root -p
+
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+USE tektutor;
+CREATE TABLE trainings ( id INT NOT NULL, name VARCHAR(250) NOT NULL, duration VARCHAR(250) NOT NULL, PRIMARY KEY(id) );
+
+INSERT INTO trainings VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO trainings VALUES ( 2, "Linux Device Driver", "5 Days" );
+INSERT INTO trainings VALUES ( 3, "Microservices in Golan", "5 Days" );
+
+SELECT * FROM trainings;
+
+# Come out of mysql client 
+exit
+
+# come out of mysql-jegan container shell
+exit
+```
