@@ -59,3 +59,24 @@
 
 ## Info - High Level Docker Architecture
 ![docker](DockerHighLevelArchitecture.png)
+
+## Info - Container Engine
+<pre>
+- Container Engine is a high-level software, that manages container images and containers
+- Under the hood, Container Engine depends on Container Runtimes
+- Container Engine is user-friendly, it nicely abstract the linux kernel low-level stuffs and provides an easier
+  interface to manages images and containers
+- examples
+  - Docker
+    - depends on containerd, which in turn depends on runC container Runtime
+  - Podman
+    - depends on CRI-O container runtime
+</pre>
+
+## Info - Container Runtime
+<pre>
+- Container Runtime is a low-level software, that manages container images and containers
+- they are not so user-friendly, hence end-user almost never use container runtimes
+- example
+  - runC, cRun, CRI-O, rkt, etc.,
+</pre>
