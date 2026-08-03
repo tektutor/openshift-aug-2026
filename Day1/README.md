@@ -108,3 +108,17 @@
 - in some cases, multiple containers would be required to run a single application
 - every container runs in a separate namespace
 </pre>
+
+
+## Info - Container Registry
+<pre>
+- is a collection of one or more Container Images
+- Docker supports 3 types of Registries
+  1. Docker Local Registry 
+     - is a folder on which all container images are cached ( /var/lib/docker is the folder where local registry is maintained)
+  2. Docker Private Registry
+     - it is a Server
+     - it could be Sonatype Nexus or JFrog Artifactory
+  3. Docker Remote Registry ( Docker Hub website )
+     - is a website maintained by Docker Inc organization along with opensource community support
+</pre>
