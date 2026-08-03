@@ -192,3 +192,12 @@ docker pull mysql:latest
 ```
 
 <img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/647cd5a4-8f99-4b87-b1f9-894725e5ef44" />
+
+
+List the images from your local docker registry
+```
+docker images | grep nginx
+docker images | grep mysql
+```
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/e384e987-5d8b-4e83-b2e4-16e4d739cad7" />
