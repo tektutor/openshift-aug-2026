@@ -269,3 +269,4 @@ List and see your container
 ```
 docker ps | grep jegan
 ```
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/d5d4ec0c-d278-4098-a9f4-039ed7af2599" />
