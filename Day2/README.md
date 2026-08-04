@@ -187,4 +187,8 @@ oc project
 
 # Deleting your project
 oc delete project jegan-project
+
+## Find details about a project
+oc new-project jegan-project
+oc describe project jegan-project 
 ```
