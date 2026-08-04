@@ -225,5 +225,10 @@ oc get pods
 oc get pod
 oc get po
 ```
-
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c1ec63be-e50e-46ad-b990-936d0e1aa5e4" />
+
+Finding the IP address of Pods and the nodes where they are running
+```
+oc get pods -o wide
+```
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/528ff357-2c69-4b0f-9da3-bb9cf9f52c83" />
