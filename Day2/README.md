@@ -147,3 +147,13 @@
 - each team member, will have an openshift user with different permission
 - project is a separate the application deployment by one team from the other teams in the same organization
 </pre>
+
+
+## Lab - Listing all nodes in the Openshift cluster
+```
+oc get nodes
+kubectl get nodes
+
+oc get nodes -o wide
+kubectl get nodes -o wide
+```
