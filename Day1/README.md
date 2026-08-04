@@ -444,3 +444,14 @@ curl http://localhost:8080
 curl http://192.168.1.199:8080 # In case you are working on server 1
 curl http://192.168.1.201:8080 # In case you are working on server 2
 ```
+
+## Lab - Renaming a container
+```
+# Notice, I'm giving a wrong name for the container below
+docker run -d --name nginx-jeg --hostname nginx-jegan nginx:latest
+docker ps
+
+# I would like to change the name of the container
+docker rename nginx-jegan nginx-jegan
+docker ps
+```
