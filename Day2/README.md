@@ -227,6 +227,20 @@ oc get po
 ```
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c1ec63be-e50e-46ad-b990-936d0e1aa5e4" />
 
+## Lab - Pod port-forward for quick testing ( not for production )
+```
+oc project jegan-project
+oc get pods -o wide
+# Terminal 1
+oc port-forward pod/nginx-57fdf6ffb7-7hfkw 7777:8080od
+
+# Terminal 2
+curl http://localhost:7777
+curl http://127.0.0.1:7777
+```
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/108bdd17-c444-4271-b5f5-b20bbec6cc5c" />
+
+
 Finding the IP address of Pods and the nodes where they are running
 ```
 oc get pods -o wide
