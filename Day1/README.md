@@ -1,7 +1,7 @@
 # Day 1
 
 ## Info - Bootloader - Multibooting/Dual Booting
-<pre>
+<pre>https://github.com/tektutor/openshift-aug-2026/edit/main/Day1/README.md
 - Boot loader is a tiny system utility that gets installed in Boot sector of your hard disk
 - When the system is booted, the BIOS POST (Power On Self Test completes) and BIOS firmware
   instructs the CPU to run the bootloader at Sector 0, Byte 0 (Boot Sector )
@@ -455,3 +455,42 @@ docker ps
 docker rename nginx-jeg nginx-jegan
 docker ps
 ```
+
+## Lab - Containerizing your spring-boot application by creating a custom docker image
+```
+cd ~
+git clone https://github.com/tektutor/spring-ms.git
+cd spring-ms
+
+# Install maven
+sudo apt update && sudo apt install -y maven
+
+mvn clean package
+cp target/spring-hello-1.0.jar .
+```
+
+You need a create Dockerfile inside the spring-ms folder, replace the existing file with below content
+<pre>
+FROM ubuntu:24.04
+
+RUN apt update && apt install -y openjdk-21-jdk
+
+COPY spring-hello-1.0.jar ./app.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "./app.jar"]  
+</pre>
+
+
+Now you may build your custom docker image to containerize your hello springboot microservice
+```
+cd ~/spring-ms
+docker build -t tektutor/hello-ms:1.0 .
+docker images | grep tektutor/hello-ms
+
+docker run -d --name hello-ms --hostname hello-ms tektutor/hello-ms:1.0
+docker ps
+```
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/4a80c33c-5eb0-4b78-b3f6-1fea031fd672" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/05eb4677-a04b-4170-acaf-4702acf05f56" />
