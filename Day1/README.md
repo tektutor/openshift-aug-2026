@@ -431,3 +431,16 @@ docker cp index.html nginx-jegan:/usr/share/nginx/html/index.html
 
 curl http://172.17.0.2:80
 ```
+
+## Lab - Port-forward to expose containerized application to enable external access ( make it accessible outside that machine )
+```
+docker run -d --name nginx-jegan --hostname nginx-jegan -p 8080:80 nginx:latest
+docker ps
+```
+
+Accessing the web page
+```
+curl http://localhost:8080
+curl http://192.168.1.199:8080 # In case you are working on server 1
+curl http://192.168.1.201:8080 # In case you are working on server 2
+```
