@@ -74,4 +74,5 @@
     - applications can be deployed from source code from version control like Github, bitbucket, etc.,
     - support different strategies
   - BuildConfig, Build
+- comes with world-wide support from Red Hat ( an IBM company )
 </pre>
