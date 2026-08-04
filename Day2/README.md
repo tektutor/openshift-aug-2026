@@ -177,4 +177,14 @@ oc get project
 oc get namespaces
 oc get namespace
 oc get ns
+
+# Switching between projects
+oc project default
+oc project jegan-project
+
+# Finding your current active project
+oc project
+
+# Deleting your project
+oc delete project jegan-project
 ```
