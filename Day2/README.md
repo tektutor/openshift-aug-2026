@@ -288,3 +288,15 @@ oc get deploy,rs,po
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/447805cc-1966-4438-b39d-d2ebf528324d" />
 
+
+## Lab - Finding more details about deployment 
+```
+oc project jegan-project
+oc get deploy,rs,po
+
+oc describe deploy/nginx
+```
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a076ba09-78f3-483d-80ff-d90239fa1ca6" />
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ef4c8ff3-3c3d-453e-8b6e-e1fb6c0eb725" />
