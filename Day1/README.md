@@ -469,6 +469,12 @@ mvn clean package
 cp target/spring-hello-1.0.jar .
 ```
 
+In case, you wish to use Microsoft Visual Code editor
+```
+cd ~/spring-ms
+code .
+```
+
 You need a create Dockerfile inside the spring-ms folder, replace the existing file with below content
 <pre>
 FROM ubuntu:24.04
