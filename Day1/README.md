@@ -475,6 +475,7 @@ cd ~/spring-ms
 code .
 ```
 
+
 You need a create Dockerfile inside the spring-ms folder, replace the existing file with below content
 <pre>
 FROM ubuntu:24.04
