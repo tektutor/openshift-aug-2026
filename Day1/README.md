@@ -447,7 +447,7 @@ curl http://192.168.1.201:8080 # In case you are working on server 2
 
 ## Lab - Renaming a container
 ```
-# Notice, I'm giving a wrong name for the container below
+# Notice, I'm given a wrong name for the container below
 docker run -d --name nginx-jeg --hostname nginx-jegan nginx:latest
 docker ps
 
