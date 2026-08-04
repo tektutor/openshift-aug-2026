@@ -256,5 +256,27 @@ oc get pods -o wide
   developers while accessing the application
 - As the Pods can be replaced by new pods, or could be deleted during scale up/down, we can never and we should never
   rely on Pod IPs or any specific pods as they are ephemeral(unstable, they can come and go )
-
 </pre>
+
+## Lab - Creating an internal service for nginx deployment
+```
+oc project jegan-project
+oc get deploy
+oc expose deploy/nginx --type=ClusterIP --port=8080
+
+oc get services
+oc get service
+oc get svc
+
+oc describe svc/nginx
+
+# In order to access/test this service we can create a route
+oc expose svc/nginx
+oc get routes
+oc get route
+```
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d9829a07-cd6d-40ba-973f-86250401ad71" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6f507644-def2-4091-8454-396f3067184e" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/5a8594d6-3c5b-4aa5-b464-1ef53e2fcfae" />
+
