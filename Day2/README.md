@@ -372,3 +372,16 @@ oc describe deploy/nginx
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a076ba09-78f3-483d-80ff-d90239fa1ca6" />
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ef4c8ff3-3c3d-453e-8b6e-e1fb6c0eb725" />
+
+
+## Lab - Find more details about replicaset
+```
+oc project jegan-project
+oc get deploy,rs,po
+oc describe rs/nginx-78876b46c9
+```
+
+## Lab - Finding more details about a pod
+```
+oc describe pod/nginx-78876b46c9-mbl5z
+```
