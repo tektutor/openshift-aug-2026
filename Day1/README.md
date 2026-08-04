@@ -325,7 +325,7 @@ CREATE TABLE trainings ( id INT NOT NULL, name VARCHAR(250) NOT NULL, duration V
 
 INSERT INTO trainings VALUES ( 1, "DevOps", "5 Days" );
 INSERT INTO trainings VALUES ( 2, "Linux Device Driver", "5 Days" );
-INSERT INTO trainings VALUES ( 3, "Microservices in Golan", "5 Days" );
+INSERT INTO trainings VALUES ( 3, "Microservices in Golang", "5 Days" );
 
 SELECT * FROM trainings;
 
