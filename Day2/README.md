@@ -157,3 +157,10 @@ kubectl get nodes
 oc get nodes -o wide
 kubectl get nodes -o wide
 ```
+
+## Lab - Check you have logged in as which user into Openshift
+```
+oc whoami
+oc whoami --show-server
+oc whoami --show-console
+```
