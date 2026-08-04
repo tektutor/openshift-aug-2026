@@ -192,3 +192,36 @@ oc delete project jegan-project
 oc new-project jegan-project
 oc describe project jegan-project 
 ```
+
+## Lab - Deploying your first application into Openshift under project in imperative style
+Find the nginx container image url
+```
+oc get imagestreams -n openshift | grep nginx
+```
+
+Create the nginx stateless application inside your project
+```
+oc project jegan-project
+oc create deployment nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.26 --replicas=3
+```
+
+List the deployments under your project
+```
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+List the replicasets under your project
+```
+oc get replicasets
+oc get replicaset
+oc get rs
+```
+
+List the pods under your project
+```
+oc get pods
+oc get pod
+oc get po
+```
