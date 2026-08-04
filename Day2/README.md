@@ -87,7 +87,7 @@
 ## Info - Types of applications supported in Kubernetes/Openshift
 <pre>
 - Stateless application ( Deployment )
-- Stateful appliaction ( StatefultSet )
+- Stateful appliaction ( StatefulSet )
 - one time application that stops after some time ( Job )
 - recurring tasks that every on a schedule day, time and once the task completes, it stops running (CronJob)
 - there are special purpose applications like (DaemonSet)
@@ -97,3 +97,17 @@
 - BuildConfig & Build (S2I)
   - application can be build and packaged as custom images
 </pre>
+
+## Info - Pod
+<pre>
+- Pod is a logical groupinb of related containers
+- every Pod has two or more containers
+- each Pod represents one application
+- in certain case, many Pods together represent one application
+- every Pod has atleast 2 containers
+  1. application container ( microservice, db server, app server, web server, webservice, REST API, SOAP api )
+  2. pause container - secret infra container ( hidden ) - this provider network
+- all containers in a Pod shares the same IP address or same network and Ports
+</pre>
+
+## Info - 
