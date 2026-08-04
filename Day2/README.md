@@ -161,6 +161,66 @@
   - Openshift API Server
 </pre>
 
+## Info - API Server Overview
+<pre>
+- is the heart of Kubernetes/Openshift
+- API server co-ordinates everything in Kubernetes/Openshift
+- API Server doesn't anything by itself, it delegates
+- the only thing API Server does is, it updates things into etcd database and whenever etcd database is update, it 
+  will trigger some events
+- the events notifies Controller within the Controller Managers, Scheduler, kubelet,etc
+- API Server has REST APIs for all the features supported by Kubernetes and Openshift
+- every API Server has its own etcd database
+- API Server is the only components which will access the etcd database, all read/writes are done by API Server only
+</pre>
+
+
+## Info - etcd database
+<pre>
+- it is an independent opensource project, key/value distributed database
+- it was not developed for Kubernetes/Openshift, it can be used outside Kubernetes/Openshift
+- it generally works as a cluster ( group of etcd instances )
+- all the etcd db instances that are in a cluster, they all synchronize data from each other
+- this independent database is used in Kubernetes and Openshift
+</pre>
+
+## Info - Controller Managers
+<pre>
+- is a collection of many Controllers
+- For instance, I'll list some of the controllers
+  1. Deployment Controller
+  2. ReplicaSet Controller
+  3. Endpoint Controller
+  4. StatefulSet Controller
+  5. DaemonSet Controller
+  6. Job Controller
+  7. CronJob Controller
+- Controller monitor and manage Kubernetes/Openshift resources
+- Each Controller manages one type of Kubernetes/Openshift resource
+  - For example
+    - Deployment Controller manages ReplicaSet
+    - Deployment Controller takes Deployment as input
+    - ReplicaSet Controller manages Pods
+    - ReplicaSet Controller takes ReplicaSet as input
+</pre>
+
+## Info - Scheduler
+<pre>
+- this component is responsible to identify a healthy node to deploy any new Pod
+- whenever new pods are created by API Server inside etcd database, it trigger an event something like new Pod created
+- this event is received by Scheduler, it then identifies a node to run the new pod, it will then make REST call to API Server
+  to send its scheduling recommendations
+- API Server receives the scheduling recommendations from scheduler, it then retrieves the Pod record from etcd database and
+  updates the scheduling info that Pod1 scheduled to worker1, etc.,
+- API Server then sends an event saying Pod1 scheduled to worker1 
+- the kubelet container agent which runs as a service in worker1 node, receives this event
+- the kubelet takes help from CRI-O container runtime to pull the required container image and creates the Pod container
+  on the worker1 node
+- the kubelet keeps sending the status of all Pod containers that runs in worker1 to API Server via REST calls, this happenss
+  in a heart-beat fashion at periodic intervals
+- the API Server updates the status of Pods based on the status it received from kubelet container agent
+</pre>
+
 ## Lab - Listing all nodes in the Openshift cluster
 ```
 oc get nodes
