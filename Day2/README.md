@@ -108,6 +108,31 @@
   1. application container ( microservice, db server, app server, web server, webservice, REST API, SOAP api )
   2. pause container - secret infra container ( hidden ) - this provider network
 - all containers in a Pod shares the same IP address or same network and Ports
+- the smallest unit that can be deployed in Kubernetes or Openshift is a Pod
+- Pod is Kubernetes/Openshift resource that resides in etcd database
+- Pod also can be understand as a JSON/YAML configuration object
 </pre>
 
-## Info - 
+## Info - ReplicaSet
+<pre>
+- in case of Stateless application, ReplicaSet Kuberentes/Openshift resource or configuration object captures the below details
+  - number of Pods instances that must be created
+  - the container image that must be used to create the Pod
+- this type of resource is managed by a controller called ReplicaSet Controller
+- ReplicaSet Controller is one of the Controller that is part of Controller Managers ( Control Plane Component )
+- this is stored and maintained within etcd database by API Server 
+- ReplicaSet has one or more Pods
+</pre>
+
+## Info - Deployment
+<pre>
+- this represents a stateless application configuration
+- this captures the below details
+  - name of the stateless application
+  - container image
+  - number of pods 
+- this resource is created and maintained by API Server within etcd database
+- Deployment Controller uses this as an input resource to manage a stateless application
+- Deployment has one or more Replicasets
+- Deployent will one Replicaset per Container Image version
+</pre>
