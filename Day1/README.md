@@ -491,6 +491,9 @@ docker images | grep tektutor/hello-ms
 
 docker run -d --name hello-ms --hostname hello-ms tektutor/hello-ms:1.0
 docker ps
+
+docker inspect hello-ms | grep IPA
+curl http://172.17.0.2:8080
 ```
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/4a80c33c-5eb0-4b78-b3f6-1fea031fd672" />
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/05eb4677-a04b-4170-acaf-4702acf05f56" />
