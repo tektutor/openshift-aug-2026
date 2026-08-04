@@ -134,7 +134,7 @@
 - this resource is created and maintained by API Server within etcd database
 - Deployment Controller uses this as an input resource to manage a stateless application
 - Deployment has one or more Replicasets
-- Deployent will one Replicaset per Container Image version
+- Deployent will create one Replicaset per Container Image version
 </pre>
 
 
