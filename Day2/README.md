@@ -83,3 +83,17 @@
 ## Info - Red Hat Openshift High Level Architecture
 ![openshift](openshiftArchitecture.png)
 ![openshift](master-node.png)
+
+## Info - Types of applications supported in Kubernetes/Openshift
+<pre>
+- Stateless application ( Deployment )
+- Stateful appliaction ( StatefultSet )
+- one time application that stops after some time ( Job )
+- recurring tasks that every on a schedule day, time and once the task completes, it stops running (CronJob)
+- there are special purpose applications like (DaemonSet)
+  - application that collects performance metrics ( Prometheus - one instance that runs in every node )
+  - load-balancing ( kube-proxy pod that runs in every node )
+  - dns pods - one dns pod that runs in each node
+- BuildConfig & Build (S2I)
+  - application can be build and packaged as custom images
+</pre>
