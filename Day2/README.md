@@ -280,3 +280,11 @@ oc get route
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6f507644-def2-4091-8454-396f3067184e" />
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/5a8594d6-3c5b-4aa5-b464-1ef53e2fcfae" />
 
+## Lab - Listing multiple resources with a single oc command
+```
+oc project jegan-project
+oc get deploy,rs,po
+```
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/447805cc-1966-4438-b39d-d2ebf528324d" />
+
