@@ -396,6 +396,13 @@ exit
 exit
 ```
 
+Troubleshooting the mysql container not after 3 instances
+```
+docker rm -f mysql-jegan
+docker run -d --name mysql-jegan --hostname mysql-jegan -e MYSQL_ROOT_PASSWORD=root@123 -v /home/palmeto/mysql-jegan:/var/lib/mysql mysql:latest --innodb-use-native-aio=0
+
+```
+
 ## Lab - Finding IP address of a container
 ```
 docker inspect ubuntu1-jegan | grep IPA
