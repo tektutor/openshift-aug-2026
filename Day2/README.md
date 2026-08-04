@@ -136,3 +136,14 @@
 - Deployment has one or more Replicasets
 - Deployent will one Replicaset per Container Image version
 </pre>
+
+
+## Info - Project
+<pre>
+- In Openshift, there is a feature called Project
+- Project is developed on top of Kubernetes Namespace
+- Project allows Openshift to apply Role Based Access Control to allow/deny access to users to a project
+- a Project may give access to set of users that are part of the team
+- each team member, will have an openshift user with different permission
+- project is a separate the application deployment by one team from the other teams in the same organization
+</pre>
