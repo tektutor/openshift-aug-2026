@@ -168,7 +168,7 @@ oc whoami --show-console
 ## Lab - Creating a project in Openshift
 ```
 # Create a project for yourself
-oc new-project jegan
+oc new-project jegan-project
 
 # List the projects
 oc get projects
