@@ -246,3 +246,15 @@ Finding the IP address of Pods and the nodes where they are running
 oc get pods -o wide
 ```
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/528ff357-2c69-4b0f-9da3-bb9cf9f52c83" />
+
+
+## Info - Kubernetes/Openshift Service
+<pre>
+- Service represents a group of load-balanced pods from a single deployment
+- Each service gets a unique name and IP address
+- The service name and IP will never change unless you deleted the service, hence this can be used reliably by
+  developers while accessing the application
+- As the Pods can be replaced by new pods, or could be deleted during scale up/down, we can never and we should never
+  rely on Pod IPs or any specific pods as they are ephemeral(unstable, they can come and go )
+
+</pre>
