@@ -452,6 +452,6 @@ docker run -d --name nginx-jeg --hostname nginx-jegan nginx:latest
 docker ps
 
 # I would like to change the name of the container
-docker rename nginx-jegan nginx-jegan
+docker rename nginx-jeg nginx-jegan
 docker ps
 ```
