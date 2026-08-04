@@ -149,6 +149,18 @@
 </pre>
 
 
+## Info - Control Plane Components in Openshift
+<pre>
+- Control Plane components runs only in Master nodes
+- there are 4 Kubernetes components
+  1. API Server
+  2. etcd database
+  3. Controller Managers
+  4. Scheduler
+- in case of Openshift, there is a 5th component
+  - Openshift API Server
+</pre>
+
 ## Lab - Listing all nodes in the Openshift cluster
 ```
 oc get nodes
