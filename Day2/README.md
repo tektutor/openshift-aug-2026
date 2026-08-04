@@ -225,3 +225,5 @@ oc get pods
 oc get pod
 oc get po
 ```
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c1ec63be-e50e-46ad-b990-936d0e1aa5e4" />
