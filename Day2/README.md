@@ -164,3 +164,17 @@ oc whoami
 oc whoami --show-server
 oc whoami --show-console
 ```
+
+## Lab - Creating a project in Openshift
+```
+# Create a project for yourself
+oc new-project jegan
+
+# List the projects
+oc get projects
+oc get project
+
+oc get namespaces
+oc get namespace
+oc get ns
+```
