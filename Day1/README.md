@@ -462,8 +462,8 @@ cd ~
 git clone https://github.com/tektutor/spring-ms.git
 cd spring-ms
 
-# Install maven
-sudo apt update && sudo apt install -y maven
+# Install maven ( I have already installed so you don't have to install )
+# sudo apt update && sudo apt install -y maven
 
 mvn clean package
 cp target/spring-hello-1.0.jar .
