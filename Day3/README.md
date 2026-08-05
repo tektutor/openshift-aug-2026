@@ -154,3 +154,40 @@ oc get route
 - For backward compatiblitity reasons, Kubernetes and Openshift retains ReplicationController
 - For the same reason, Openshift retains DeploymentConfig for backward compatability otherwise it is deprecated
 </pre>
+
+
+## Demo - Installing Helm package manager in Ubuntu
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+## Lab - Helm Package Manager - Packaging wordpress and mysql as Helm Chart and deploy into Openshift
+```
+cd ~
+mkdir helm-wordpress-chart
+cd helm-wordpress-chart
+
+helm create wordpress
+tree wordpress
+cd wordpress/templates
+rm -rf *
+cp ~/openshift-aug-2026/Day3/wordpress-with-configmaps-and-secrets/*.yml .
+
+cd ../..
+
+helm package wordpress
+ls -l
+
+oc delete project jegan-project
+oc new-project jegan-project
+
+helm install wordpress wordpress-0.1.0.tgz
+helm list
+oc get pods
+oc get route
+
+# Take the route url and access the wordpress from your lab machine web browser
+# Alternatively, you 
+```
