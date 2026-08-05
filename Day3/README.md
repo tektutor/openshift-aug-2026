@@ -62,12 +62,15 @@ oc get pods
 
 # Scale up
 # Update the nginx-deploy.yml, update replicas from 3 to 5, save and exit
+sed -i 's/replicas: 3/replicas: 5/' nginx-deploy.yml
 oc apply -f nginx-deploy.yml
 
 oc get pods
 
 # Scale down
 # Update the nginx-deploy.yml, update replicas from 5 to 3, save and exit
+sed -i 's/replicas: 5/replicas: 3/' nginx-deploy.yml
+
 oc apply -f nginx-deploy.yml
 
 oc get pods
