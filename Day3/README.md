@@ -60,8 +60,16 @@ oc project jegan-project
 
 oc get pods
 
-# Update the nginx-deploy.yml, replace replicas from 3 to 5, save and exit
+# Scale up
+# Update the nginx-deploy.yml, update replicas from 3 to 5, save and exit
 oc apply -f nginx-deploy.yml
 
 oc get pods
+
+# Scale down
+# Update the nginx-deploy.yml, update replicas from 5 to 3, save and exit
+oc apply -f nginx-deploy.yml
+
+oc get pods
+
 ```
