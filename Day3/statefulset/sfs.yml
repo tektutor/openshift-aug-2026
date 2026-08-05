@@ -27,7 +27,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nfs:
-    server: 192.168.10.201        # EDIT: your NFS server
+    server: 192.168.2.200        # EDIT: your NFS server
     path: /var/nfs/jegan/mysql-0       # EDIT: a distinct, empty export per pod
 ---
 apiVersion: v1
@@ -41,7 +41,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nfs:
-    server: 192.168.10.201        # EDIT
+    server: 192.168.2.200        # EDIT
     path: /var/nfs/jegan/mysql-1       # EDIT
 ---
 apiVersion: v1
@@ -55,7 +55,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nfs:
-    server: 192.168.10.201        # EDIT
+    server: 192.168.2.200        # EDIT
     path: /var/nfs/jegan/mysql-2       # EDIT
 ---
 # ---- Config fragment + the single setup script (handles both roles) ----
