@@ -100,7 +100,7 @@
 
 ## Info - Pod
 <pre>
-- Pod is a logical groupinb of related containers
+- Pod is a logical grouping of related containers
 - every Pod has two or more containers
 - each Pod represents one application
 - in certain case, many Pods together represent one application
