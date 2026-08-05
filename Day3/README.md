@@ -108,6 +108,8 @@ cd Day3/wordpress-with-configmaps-and-secrets
 
 # Make sure all yaml you have replace 'jegan' with your name
 # Make sure the NFS server ip is updated before proceeding
+# Update the mysql-pv.yml mysql-pvc.yml mysql-deploy.yml, wordpress-pv.yml wordpress.pyc.yml wordpress-deploy.yml
+# To find the nfs path reserved for your wordpress and mysql run this command showmount -e | grep jegan
 ./deploy.sh
 
 oc get pv,pvc
