@@ -189,5 +189,5 @@ oc get pods
 oc get route
 
 # Take the route url and access the wordpress from your lab machine web browser
-# Alternatively, you 
+# Alternatively, you can access the wordpress blog from your Openshift webconsole topology up arrow (click)
 ```
