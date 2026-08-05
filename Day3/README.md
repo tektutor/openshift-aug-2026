@@ -33,3 +33,20 @@ oc create -f nginx-clusterip-svc.yml --save-config=true
 oc get services
 oc describe svc/nginx
 ```
+
+## Lab - Creating a NodePort external service for nginx deployment in declarative style
+```
+oc project jegan-project
+
+oc expose deploy/nginx --type=NodePort --port=8080 --dry-run=client -o yaml > nginx-nodeport-svc.yml
+cat nginx-nodeport-svc.yml
+
+# Delete the existing internal service
+oc delete -f nginx-clusterip-svc.yml
+
+# Now create the nodeport service
+oc apply -f nginx-nodeport-svc.yml
+
+oc get services
+oc describe svc/nginx
+```
