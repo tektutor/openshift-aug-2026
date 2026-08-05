@@ -97,3 +97,27 @@ oc create deploy nginx --image=docker.io/bitnamilegacy/nginx:1.29.1 --replicas=3
 ```
 
 ![internals](openshift-internals.png)
+
+## Lab - Deploying wordpress and mysql multi-pod application in declarative style
+```
+cd  ~
+
+git clone https://github.com/tektutor/openshift-aug-2026.git
+cd openshift-aug-2026
+cd Day3/wordpress-with-configmaps-and-secrets
+
+# Make sure all yaml you have replace 'jegan' with your name
+# Make sure the NFS server ip is updated before proceeding
+# Update the mysql-pv.yml mysql-pvc.yml mysql-deploy.yml, wordpress-pv.yml wordpress.pyc.yml wordpress-deploy.yml
+# To find the nfs path reserved for your wordpress and mysql run this command showmount -e | grep jegan
+
+grep -rn jegan *.yml
+sed -i 's/jegan/your-name-goes-here/gI' *.yml
+./deploy.sh
+
+oc get pv,pvc
+oc get pods
+
+oc get route
+# Route url you can paste in the lab machine browse and access the wordpress blog page
+```
