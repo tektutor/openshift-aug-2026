@@ -74,5 +74,18 @@ sed -i 's/replicas: 5/replicas: 3/' nginx-deploy.yml
 oc apply -f nginx-deploy.yml
 
 oc get pods
+```
 
+## Lab - Rolling update - upgrade nginx image version from 1.26 to 1.27
+```
+oc project jegan-project
+oc get pods -o yaml | grep image
+
+# Update nginx image version from 1.26 to 1.27
+sed -i 's/1\.26/1\.27/g' nginx-deploy.yml
+
+oc apply -f nginx-deploy.yml
+oc rollout status deploy/nginx
+oc rollout history deploy/nginx
+oc get pods -o yaml | grep image
 ```
