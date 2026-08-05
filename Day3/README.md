@@ -89,3 +89,11 @@ oc rollout status deploy/nginx
 oc rollout history deploy/nginx
 oc get pods -o yaml | grep image
 ```
+
+## Info - What happens internally in Openshift when we deploy an application either declaratively or imperative 
+Let's say we run the below command, 
+```
+oc create deploy nginx --image=docker.io/bitnamilegacy/nginx:1.29.1 --replicas=3
+```
+
+![internals](openshift-internals.png)
