@@ -49,4 +49,7 @@ oc apply -f nginx-nodeport-svc.yml
 
 oc get services
 oc describe svc/nginx
+
+# You need to find the nodeport allocated for your nginx service and replace the 32200 port with your nodeport
+curl http://master03.ocp4.palmeto.org:32200
 ```
