@@ -121,3 +121,36 @@ oc get pods
 oc get route
 # Route url you can paste in the lab machine browse and access the wordpress blog page
 ```
+
+
+## Info - ReplicationController vs DeploymentConfig vs Deployment vs ReplicaSet
+<pre>
+- Openshift is running on top of Kubernetes cluster
+- In older version of Kubernetes, we need to deploy stateless applications as ReplicationController
+- The ReplicationController supports
+  - Rolling update and
+  - Scale up/down
+- As per SOLID Design Principles
+  - S - Single Responsibility Principle (SRP)
+- each controller is supposed to manage one resource with one functionality
+- ReplicationController is responsible for Rolling update and Scaling up/down, which kind
+  of violates the Single Responsibility Principle
+- ReplicationController doesn't support declarative style of rolling update and scale up/down
+- As the ReplicationController doesn't support declarative style, Openshift team introduced DeploymentConfig which
+  under the hood uses ReplicationController
+- DeploymentConfig supports declarative style
+- Meanwhile, Kubernetes team, wanted to refactor ReplicationController
+  - ReplicationController was split into two 2
+    1. Deployment
+      - Deployment Controller is responsible for Rolling update
+    2. ReplicaSet
+      - ReplicaSet Controller is responsible for Scale up/down
+  - In latest Kubernetes, they deprecated use of ReplicationController
+    - In the place of ReplicationController for all new stateless application deployments we need
+      to use Deployment & ReplicaSet
+  - The ripple effect, due to this deprecation, Openshift team deprecated use of DeploymentConfig and
+    started encouraging use of Deployment & Replicaset for stateless application
+  - As we know Deployment supports declarative approach
+- For backward compatiblitity reasons, Kubernetes and Openshift retains ReplicationController
+- For the same reason, Openshift retains DeploymentConfig for backward compatability otherwise it is deprecated
+</pre>
