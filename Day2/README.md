@@ -304,7 +304,7 @@ oc get po
 oc project jegan-project
 oc get pods -o wide
 # Terminal 1
-oc port-forward pod/nginx-57fdf6ffb7-7hfkw 7777:8080od
+oc port-forward pod/nginx-57fdf6ffb7-7hfkw 7777:8080
 
 # Terminal 2
 curl http://localhost:7777
