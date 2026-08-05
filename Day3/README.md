@@ -53,3 +53,15 @@ oc describe svc/nginx
 # You need to find the nodeport allocated for your nginx service and replace the 32200 port with your nodeport
 curl http://master03.ocp4.palmeto.org:32200
 ```
+
+## Lab - Scale up/down a deployment using declarative approach
+```
+oc project jegan-project
+
+oc get pods
+
+# Update the nginx-deploy.yml, replace replicas from 3 to 5, save and exit
+oc apply -f nginx-deploy.yml
+
+oc get pods
+```
