@@ -1,5 +1,11 @@
 # Day 4
 
+## Info - Cloning the training repository
+```
+cd ~
+git clone https://github.com/tektutor/openshift-aug-2026.git
+```
+
 ## Info - S2I
 <pre>
 - Openshift supports deploying application from source code from GitHub or similar version control repositories
@@ -57,6 +63,12 @@ curl http://hello-s2i-source-jegan.apps.ocp4.palmeto.org
 
 ## Lab - Deploying your application using S2I docker strategy
 ```
+cd ~/openshift-aug-2026
+git pull
+
+cd Day4/node-affinity
+ls -l
+
 oc delete project jegan-project
 oc new-project jegan-project
 
