@@ -182,4 +182,6 @@ oc get deploy,rs,po
 oc expose deploy/nginx --type=LoadBalancer --port=8080
 oc get svc
 oc describe svc/nginx
+
+curl http://192.168.100.50:8080
 ```
