@@ -151,7 +151,7 @@ oc describe deploy/nginx
 
 # Now, try to label worker02 with disk=ssd label
 oc label node/worker02.ocp4.palmeto.org disk=ssd
-oc get pods -l disk=ssd 
+oc get nodes -l disk=ssd 
 # Now all pods will be deployed into worker 2
 oc get pods -o wide
 
