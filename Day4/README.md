@@ -4,6 +4,10 @@
 ```
 cd ~
 git clone https://github.com/tektutor/openshift-aug-2026.git
+
+git config --global user.name "Jeganathan Swaminathan"
+git config --global user.email "mail2jegan@gmail.com"
+git config --global --list
 ```
 
 ## Info - S2I
