@@ -63,12 +63,6 @@ curl http://hello-s2i-source-jegan.apps.ocp4.palmeto.org
 
 ## Lab - Deploying your application using S2I docker strategy
 ```
-cd ~/openshift-aug-2026
-git pull
-
-cd Day4/node-affinity
-ls -l
-
 oc delete project jegan-project
 oc new-project jegan-project
 
@@ -108,6 +102,12 @@ curl http://hello-s2i-docker-jegan.apps.ocp4.palmeto.org
 
 ## Lab - Node affinity
 ```
+cd ~/openshift-aug-2026
+git pull
+
+cd Day4/node-affinity
+ls -l
+
 # Remove the label
 oc label node/worker02.ocp4.palmeto.org disk-
 oc label node/worker03.ocp4.palmeto.org disk-
