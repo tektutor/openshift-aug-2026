@@ -123,7 +123,7 @@ oc get nodes -l disk=ssd
 oc project jegan-project
 oc apply -f preferred-node-affinity.yml
 # Notice, even though there are no node that has SSD storage, the pods are still deployed
-oc get pods - wide
+oc get pods -o wide
 
 # Now, try to label worker02 with disk=ssd label
 oc label node/worker02.ocp4.palmeto.org disk=ssd
