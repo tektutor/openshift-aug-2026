@@ -210,3 +210,40 @@ curl http://192.168.100.50:8080
 - behind a service, there will be load of Pods
 </pre>
 
+
+## Lab - Ingress
+
+We need atleast 2 deployment in the project to demonstrate this effectively
+
+Hence, let's deploy nginx in the project
+```
+oc delete project jegan
+oc new-project jegan
+
+oc create deploy nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.26 --replicas=3
+oc get deploy
+oc expose deploy/nginx --port=8080
+```
+
+Let's deploy the hello microservice
+```
+oc project jegan
+oc create deploy hello --image=image-registry.openshift-image-registry.svc:5000/openshift/hello:1.0 --replicas=3
+oc get deploy
+oc expose deploy/hello --port=8080
+```
+
+Let's create the ingress
+```
+cd ~/openshift-aug-2026
+git pull
+cd Day4/ingress
+cat ingress.yml
+oc apply -f ingress.yml
+
+oc get ingress
+oc describe ingress/tektutor
+
+curl http://tektutor.apps.ocp4.palmeto.org/nginx
+curl http://tektutor.apps.ocp4.palmeto.org/hello
+```
