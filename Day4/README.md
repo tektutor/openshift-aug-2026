@@ -179,6 +179,9 @@ oc new-project jegan-project
 oc create deploy nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.26 --replicas=3
 oc get deploy,rs,po
 
+# Delete existing nginx service
+oc delete svc/nginx
+
 oc expose deploy/nginx --type=LoadBalancer --port=8080
 oc get svc
 oc describe svc/nginx
