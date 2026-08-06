@@ -116,7 +116,7 @@ ls -l
 oc label node/worker02.ocp4.palmeto.org disk-
 oc label node/worker03.ocp4.palmeto.org disk-
 
-# First try to list nodes that has a label disk=ssd, you should no nodes
+# First try to list nodes that has a label disk=ssd, you should see no nodes
 oc get nodes -l disk=ssd
 
 # Assuming no nodes meets that criteria, let's deploy the preferred node affinity deployment
