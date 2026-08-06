@@ -93,3 +93,52 @@ curl http://hello-s2i-docker-jegan.apps.ocp4.palmeto.org
     into nodes that are alloted for the dev team, similarly each team can have their own dedicated nodes reserved for their use
 </pre>
 
+
+## Lab - Node affinity
+```
+# Remove the label
+oc label node/worker02.ocp4.palmeto.org disk-
+oc label node/worker03.ocp4.palmeto.org disk-
+
+# First try to list nodes that has a label disk=ssd
+oc get nodes -l disk=ssd
+
+# Assuming no nodes meets that criteria, let's deploy the preferred node affinity deployment
+oc project jegan-project
+oc apply -f preferred-node-affinity.yml
+# Notice, even though there are no node that has SSD storage, the pods are still deployed
+oc get pods - wide
+
+# Now, try to label worker02 with disk=ssd label
+oc label node/worker02.ocp4.palmeto.org disk=ssd
+oc get pods -l disk=ssd 
+# As the pods are already deployed and they are running, labeling a node with disk=ssd at this point has no impact
+
+# Now, let's delete the preferred nginx deployment
+oc delete -f preferred-node-affinity.yml
+
+# As there is a node that meets the criteria
+oc get nodes -l disk=ssd
+oc apply -f preferred-node-affinity.yml
+# We can see, all pods are deployed onto worker2
+oc get pods -o wide
+
+# Now, let's delete the preferred nginx deployment
+oc delete -f preferred-node-affinity.yml
+
+# Now, let's remove the label from worker02
+oc label node/worker02.ocp4.palmeto.org disk-
+oc apply f- required-node-affinity.yml
+# As there are no nodes that meets the criteria, the pods will not be deployed
+oc get pods -o wide
+oc describe deploy/nginx
+
+# Now, try to label worker02 with disk=ssd label
+oc label node/worker02.ocp4.palmeto.org disk=ssd
+oc get pods -l disk=ssd 
+# Now all pods will be deployed into worker 2
+oc get pods -o wide
+
+# Once you are done with this exercise, you may delete the deployment
+oc delete f- required-node-affinity.yml
+```
