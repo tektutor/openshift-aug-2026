@@ -158,3 +158,28 @@ oc get pods -o wide
 # Once you are done with this exercise, you may delete the deployment
 oc delete -f required-node-affinity.yml
 ```
+
+## Info - LoadBalancer Service
+<pre>
+- this is an external service, used in managed Kubernetes and/or Openshift clusters running in AWS/Azure or similar public cloud env
+- For instance, AWS has ALB ( Application Load Balancer ), Azure has Azure Load Balancer for this they will charge
+- when you create a LoadBalancer service on eks, aks, ROSA or ARO, then it creates a Load Balancer on that public cloud
+- this type of service is really not meant for local Kubernetes or Openshift clusters
+- if at all you wanted to enable this LoadBalancer service on your local Kubernetes and/or Openshift, you need to install
+  MetalLB Operator
+- Metallb operator will create a loadbalancer within your openshift cluster and let's that load balancer forward the calls to 
+  your application pods ( basically load-balances your pods )
+</pre>
+
+## Lab - Let's create a load balancer for nginx deployment
+```
+oc delete project jegan-project
+oc new-project jegan-project
+
+oc create deploy nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.26 --replicas=3
+oc get deploy,rs,po
+
+oc expose deploy/nginx --type=LoadBalancer --port=8080
+oc get svc
+oc describe svc/nginx
+```
