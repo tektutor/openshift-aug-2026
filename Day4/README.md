@@ -38,3 +38,35 @@
   - Pushes the Custom Image into Openshift's Internal Container Registry
   - Deploy's your application from the Custom Image it pushed in the Internal Registry
 </pre>
+
+## Lab - Deploying your application using S2I source strategy
+```
+oc delete project jegan-project
+oc new-project jegan-project
+
+oc new-app --name=hello-s2i-source registry.access.redhat.com/ubi8/openjdk-17~https://github.com/tektutor/spring-ms.git --strategy=source
+oc expose svc/hello-s2i-source
+
+oc logs -f bc/hello-s2i-source
+
+oc get route
+
+curl http://<your-route-url>
+curl http://hello-s2i-source-jegan.apps.ocp4.palmeto.org
+```
+
+## Lab - Deploying your application using S2I docker strategy
+```
+oc delete project jegan-project
+oc new-project jegan-project
+
+oc new-app --name=hello-s2i-docker https://github.com/tektutor/spring-ms.git --strategy=docker
+oc expose svc/hello-s2i-docker
+
+oc logs -f bc/hello-s2i-docker
+
+oc get route
+
+curl http://<your-route-url>
+curl http://hello-s2i-docker-jegan.apps.ocp4.palmeto.org
+```
