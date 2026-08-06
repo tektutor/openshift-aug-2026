@@ -169,6 +169,9 @@ oc delete -f required-node-affinity.yml
   MetalLB Operator
 - Metallb operator will create a loadbalancer within your openshift cluster and let's that load balancer forward the calls to 
   your application pods ( basically load-balances your pods )
+- in case of ClusterIP and NodePort Service, kube-proxy performs load-balancing
+- in this case, the Metallb load balancer will perform the load balancing for your pods just like AWS ALB or Azure ALB does it
+  in eks, aks, ROSA or ARO
 </pre>
 
 ## Lab - Let's create a load balancer for nginx deployment
