@@ -191,3 +191,22 @@ oc describe svc/nginx
 
 curl http://192.168.100.50:8080
 ```
+
+## Info - Ingress
+<pre>
+- it is not a service
+- it is a set of forwarding rules
+- in order to make the Ingress work, your openshift cluster must have a respective Ingress Controller
+- depending on which LoadBalancer is installed as part of Openshift setup, the Ingress Controller can be used
+- in our lab setup, I have installed HAProxy Load Balancer, hence the type of Ingress Controller will be HAProxy Ingress Controller
+- whenever someone creates a Ingress rule in their project namespace, the HAProxy Ingress Controller will detect it
+  and it picks those forwarding rules mentioned in the ingress and configures the HAProxy Load Balancer in the openshift cluster
+- so there are 3 components involved for the Ingress to work
+  1. Ingress ( set of forwarding rules )
+  2. HAProxy Ingress Controller
+  3. HAProxy Load Balancer
+- Ingress will provide a public url
+- behind an Ingress, there will a one or more services ( ClusterIP, NodePort, LoadBalancer services )
+- behind a service, there will be load of Pods
+</pre>
+
