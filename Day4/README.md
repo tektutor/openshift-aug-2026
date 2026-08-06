@@ -144,7 +144,7 @@ oc delete -f preferred-node-affinity.yml
 
 # Now, let's remove the label from worker02
 oc label node/worker02.ocp4.palmeto.org disk-
-oc apply f- required-node-affinity.yml
+oc apply -f required-node-affinity.yml
 # As there are no nodes that meets the criteria, the pods will not be deployed
 oc get pods -o wide
 oc describe deploy/nginx
