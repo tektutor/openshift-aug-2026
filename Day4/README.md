@@ -70,3 +70,26 @@ oc get route
 curl http://<your-route-url>
 curl http://hello-s2i-docker-jegan.apps.ocp4.palmeto.org
 ```
+
+## Info - Node Affinity 
+<pre>
+- is a way, applications can request for nodes that meets certain criteria
+- For instance, let's say there is an application that does loads of disk intensive operations (read/write), it 
+  would be preferable to deploy those applications on a node that has SSD storage which is comparatively faster than old style HDD
+- In such case, the application can express its criteria under the node affinity section in the yaml file
+  - there are 2 types of criteria
+    - Preferred
+      - scheduler will look for nodes that meets the criteria expressed by application deployment before scheduling
+      - in case scheduler is able to find nodes that meets the criteria, it deploys the pods on those nodes that meets the criteria
+      - if there are no nodes that meets the criteria, then scheduler will as usual deploy those pods on any node
+    - Required
+      - scheduler will look for nodes that meets the criteria expressed by application deployment before scheduling
+      - in case scheduler is able to find nodes that meets the criteria, it deploys the pods on those nodes that meets thee criteria
+      - if there are no nodes that meets the criteria, then scheduler will not deploy those pods on any node until such criteria is met
+- Some practical usecases
+  - in a openshift cluster that is used by multiples team in an organization, it is possible to label certain nodes as env=dev
+    env=qa, env=pre-prod, etc
+  - whenever dev team deploys an application they will add the node-affinity section, hence their application will only get deployed
+    into nodes that are alloted for the dev team, similarly each team can have their own dedicated nodes reserved for their use
+</pre>
+
