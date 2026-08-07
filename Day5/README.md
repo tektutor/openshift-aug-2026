@@ -1,5 +1,16 @@
 # Day 5
 
+## Lab - Openshift command-line login
+```
+cat ~/openshift.txt
+
+# Server 1
+oc login -u kubeadmin -p IpS7G-EuRgt-kR36u-5oDRB https://api.ocp4.palmeto.org:6443 --insecure-skip-tls-verify
+
+# Server 2
+oc login -u kubeadmin -p Xcjpf-qSU57-aIuwi-ZuLDD https://api.ocp4.palmeto.org:6443 --insecure-skip-tls-verify=true
+```
+
 ## Info - How many users one Pod can handle?
 <pre>
 - there is no fixed number
