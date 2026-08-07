@@ -1,6 +1,8 @@
 # Day 5
 
 ## Lab - Openshift command-line login
+
+Occasionally Openshift login session will timeout and any openshift commands you run will not work,so you need to login
 ```
 cat ~/openshift.txt
 
