@@ -135,12 +135,15 @@ ab -k -n 200000 -c 1000 https://nginx-jegan.apps.ocp4.palmeto.org/
 cd ~/openshift-aug-2026
 git pull
 cd Day5/CICD
-oc project jegan-project
+oc project jegan
 oc apply -f buildconfig.yml
 oc get buildconfigs
 
 oc create imagestream hello-microservice
+
+# Replace jegan with your project name
 oc policy add-role-to-user edit system:serviceaccount:jegan:default
+
 oc start-build bc/java-app-pipeline
 
 oc logs -f bc/java-app-pipeline 
