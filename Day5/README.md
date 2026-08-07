@@ -54,7 +54,7 @@ cd Day5/job
 oc project jegan-project
 
 oc apply -f job.yml
-oc get jobs -f
+oc get jobs -w
 ```
 
 ## Lab - CronJob
@@ -65,7 +65,7 @@ cd Day5/cron-job
 oc project jegan-project
 
 oc apply -f cron-job.yml
-oc get jobs -f
+oc get jobs -w
 ```
 
 ## Lab - Daemonset
