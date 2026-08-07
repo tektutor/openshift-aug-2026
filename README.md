@@ -1,5 +1,15 @@
 # Red Hat Openshift 03-07 August 2026
 
+## Post test link 
+<pre>
+https://forms.cloud.microsoft/r/dDG80MLVir
+</pre>
+ 
+## Training Feedback
+<pre>
+https://forms.cloud.microsoft/r/2WfdZE65vT
+</pre>
+
 ## About about lab environment
 <pre>
 We have got two servers with below configurations
