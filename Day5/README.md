@@ -11,6 +11,9 @@ oc new-app --name=jms-consumer https://github.com/tektutor/openshift-aug-2026.gi
 
 oc get pods
 
-oc logs jms-producer-5f78665c77-8pchq
-oc logs jms-consumer-695fdfd78c-gcrlg
+# Terminal window 1
+oc logs -f jms-producer-5f78665c77-8pchq
+
+# Terminal window 2
+oc logs -f jms-consumer-695fdfd78c-gcrlg
 ```
