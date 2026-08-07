@@ -17,3 +17,25 @@ oc logs -f jms-producer-5f78665c77-8pchq
 # Terminal window 2
 oc logs -f jms-consumer-695fdfd78c-gcrlg
 ```
+
+## Lab - Job
+```
+cd ~/openshift-aug-2026
+git pull
+cd Day5/job
+oc project jegan-project
+
+oc apply -f job.yml
+oc get jobs -f
+```
+
+## Lab - CronJob
+```
+cd ~/openshift-aug-2026
+git pull
+cd Day5/cron-job
+oc project jegan-project
+
+oc apply -f cron-job.yml
+oc get jobs -f
+```
