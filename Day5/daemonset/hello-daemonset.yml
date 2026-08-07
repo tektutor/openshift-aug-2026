@@ -14,5 +14,5 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/openshift/hello:5.0
+      - image: image-registry.openshift-image-registry.svc:5000/openshift/hello:1.0
         name: hello
