@@ -39,3 +39,14 @@ oc project jegan-project
 oc apply -f cron-job.yml
 oc get jobs -f
 ```
+
+## Lab - Daemonset
+```
+cd ~/openshift-aug-2026
+git pull
+cd Day5/daemonset
+oc apply -f hello-daemonset.yml
+
+# You will exactly one pod running on each node as we have 6 nodes in total in our cluster
+oc get pods -o wide
+```
