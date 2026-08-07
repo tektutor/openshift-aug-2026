@@ -1,11 +1,11 @@
 # Red Hat Openshift 03-07 August 2026
 
-## Post test link 
+## Post test link ( Complete it from lab machine web browser )
 <pre>
 https://forms.cloud.microsoft/r/dDG80MLVir
 </pre>
  
-## Training Feedback
+## Training Feedback( Complete it from lab machine web browser )
 <pre>
 https://forms.cloud.microsoft/r/2WfdZE65vT
 </pre>
